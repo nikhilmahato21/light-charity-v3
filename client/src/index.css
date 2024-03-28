@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer components {
+    .align-element {
+      @apply mx-auto max-w-7xl px-8;
+    }
+  }
+
+  .nav-link {
+    margin-bottom: 10px;
+  }
+
+  .nav-link:hover{
+    font-size: 1.3rem;
+    font-weight: 500 ;
+  }
