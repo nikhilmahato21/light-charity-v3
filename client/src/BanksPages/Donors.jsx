@@ -26,7 +26,7 @@ const Donors = () => {
               <th>number</th>
               <th>location</th>
               <th>Blood Group</th>
-              <th>Donated (bangs)</th>
+              <th>Donated (bags)</th>
               <th>Date</th>
             </tr>
           </thead>
