@@ -2,15 +2,23 @@ import { Link, useLoaderData } from "react-router-dom";
 import OpacityOutlinedIcon from "@mui/icons-material/OpacityOutlined";
 import PeopleAltOutlinedIcon from "@mui/icons-material/PeopleAltOutlined";
 import PersonAddAltOutlinedIcon from "@mui/icons-material/PersonAddAltOutlined";
+import ManageAccountsOutlinedIcon from "@mui/icons-material/ManageAccountsOutlined";
 
 const LeftSidebar = () => {
   const data = useLoaderData();
   return (
     <div className=" h-full w-full flex flex-col  items-center border-r-2 border-grey-400">
-      <div className=" flex items-center h-1/6 w-full justify-center">
+      <div className=" flex flex-col items-center h-1/6 w-full justify-center">
         <h1 className=" text-3xl font-semibold capitalize">
-         {data.bloodBank.name}
+          {data.bloodBank.name}
         </h1>
+        <div></div>
+        <Link
+          to="/blood-bank/dashboard/profile"
+          className=" hover:text-slate-500 flex items-center justify-center gap-1 text-blue-400"
+        >
+          <span>Profile</span> <ManageAccountsOutlinedIcon />
+        </Link>
       </div>
 
       <div className=" flex flex-col text-xl capitalize text-center font-semibold w-full items-center h-5/6 gap-5 mt-10">

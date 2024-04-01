@@ -24,6 +24,7 @@ import BloodBankDashboard from "./BanksPages/BloodBankDashboard";
 import Inventory from "./BanksPages/Inventory";
 import Donors from "./BanksPages/Donors";
 import AddDonor from "./BanksPages/AddDonor";
+import BBProfile from "./BanksPages/BBProfile";
 
 const router = createBrowserRouter([
   {
@@ -52,13 +53,12 @@ const router = createBrowserRouter([
         path: "blood-bank/dashboard",
         element: <BloodBankDashboard />,
         loader: BBDashboardLoader,
-        
+
         children: [
           {
             index: true,
             element: <Donors />,
             loader: BBDashboardLoader,
-          
           },
           {
             path: "inventory",
@@ -69,6 +69,10 @@ const router = createBrowserRouter([
             path: "add-donor",
             element: <AddDonor />,
             action: addDonorAction,
+          },
+          {
+            path: "profile",
+            element: <BBProfile />,
           },
         ],
       },
