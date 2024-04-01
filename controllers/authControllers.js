@@ -38,3 +38,10 @@ export const register = async (req, res) => {
             res.status(StatusCodes.OK).json({msg: "logged in successfully"})
           
     };
+    export const logout = (req, res) => {
+      res.cookie("bloobankToken", "logout", {
+        httpOnly: true,
+        expires: new Date(Date.now()),
+      });
+      res.status(StatusCodes.OK).json({ msg: "logged out!" });
+    };

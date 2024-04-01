@@ -81,7 +81,17 @@ export const BBLoginAction = async ({ request }) => {
   }
 };
 
-
+export const BBLogoutAction = async () => {
+  try {
+    await customFetchBloodbank.get("/auth/logout");
+    toast.success("Logged out!");
+    return redirect("/blood-bank/login");
+  } catch (error) {
+    console.log(error);
+    toast.error(error?.response?.data?.msg);
+    return error;
+  }
+};
 
 export const addDonorAction = async ({ request }) => {
   const formData = await request.formData();

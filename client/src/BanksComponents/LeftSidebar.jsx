@@ -3,6 +3,8 @@ import OpacityOutlinedIcon from "@mui/icons-material/OpacityOutlined";
 import PeopleAltOutlinedIcon from "@mui/icons-material/PeopleAltOutlined";
 import PersonAddAltOutlinedIcon from "@mui/icons-material/PersonAddAltOutlined";
 import ManageAccountsOutlinedIcon from "@mui/icons-material/ManageAccountsOutlined";
+import { BBLogoutAction } from "../utils/actions";
+import LogoutOutlinedIcon from "@mui/icons-material/LogoutOutlined";
 
 const LeftSidebar = () => {
   const data = useLoaderData();
@@ -45,6 +47,15 @@ const LeftSidebar = () => {
           <PersonAddAltOutlinedIcon />
           add donor
         </Link>
+        <div className="flex items-center justify-center w-full mt-auto mb-3">
+          <button
+            type="button"
+            className="text-blue-400"
+            onClick={BBLogoutAction}
+          >
+            logout <LogoutOutlinedIcon />
+          </button>
+        </div>
       </div>
     </div>
   );
