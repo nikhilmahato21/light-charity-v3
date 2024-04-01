@@ -21,8 +21,8 @@ export const authenticateDonor = async (req, res, next) =>{
   const {donorToken} = req.cookies;
   if(!donorToken) throw new UnauthenticatedError("you are not authorized for this route");
   try {
-     const {donorId, donatedAt } = verifyJWT(donorToken);
-     req.donor = {donorId, donatedAt}
+    const {donorId, donatedAt, location } = verifyJWT(donorToken);
+    req.donor = {donorId, donatedAt, location}
      next();
   } catch (error) {
     throw new UnauthenticatedError("you are not authorized for this route");

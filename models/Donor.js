@@ -15,11 +15,22 @@ const Donor = new mongoose.Schema(
             donated: Number,
             donatedAt:Array,
             date: Date,
+            location: {
+                type: {
+                  type: String,
+                  enum: ['Point'],
+                },
+                coordinates: {
+                  type: [Number],
+                }
+              }
     },
 
 
     {timestamps: true},
 )
+
+Donor.index({location: "2dsphere"});
 
 Donor.methods.toJSON = function(){
     let obj = this.toObject();

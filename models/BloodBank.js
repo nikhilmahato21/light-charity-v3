@@ -2,11 +2,12 @@ import mongoose from "mongoose";
 
 const { Schema } = mongoose;
 
-const BloodBankSchema = new Schema(
+const BloodBank = new Schema(
   {
     name: { type: String, required: true },
     email: { type: String, required: true },
     password: { type: String, required: true },
+    address: String,
     donors: Array,
     inventory: [
       {
@@ -20,11 +21,21 @@ const BloodBankSchema = new Schema(
         },
       },
     ],
+    location: {
+      type: {
+        type: String,
+        enum: ['Point'],
+      },
+      coordinates: {
+        type: [Number],
+      }
+    }
   },
   { timestamps: true }
 );
 
-BloodBankSchema.pre("save", function (next) {
+
+BloodBank.pre("save", function (next) {
   const defaultBloodGroups = ["A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-"];
 
   this.inventory = defaultBloodGroups.map((bloodGroup) => ({
@@ -35,10 +46,12 @@ BloodBankSchema.pre("save", function (next) {
   next();
 });
 
-BloodBankSchema.methods.toJSON = function () {
+BloodBank.methods.toJSON = function () {
   let obj = this.toObject();
   delete obj.password;
   return obj;
 };
 
-export default mongoose.model("BloodBank", BloodBankSchema);
+BloodBank.index({location: "2dsphere"});
+
+export default mongoose.model("BloodBank", BloodBank);
