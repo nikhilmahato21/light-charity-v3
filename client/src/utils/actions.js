@@ -83,9 +83,10 @@ export const BBLoginAction = async ({ request }) => {
 
 export const BBLogoutAction = async () => {
   try {
+    redirect("/blood-bank/login");
     await customFetchBloodbank.get("/auth/logout");
     toast.success("Logged out!");
-    return redirect("/blood-bank/login");
+    return;
   } catch (error) {
     console.log(error);
     toast.error(error?.response?.data?.msg);
