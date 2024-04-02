@@ -47,7 +47,7 @@ const LeftSidebar = () => {
           <PersonAddAltOutlinedIcon />
           add donor
         </Link>
-        <div className="flex items-center justify-center w-full mt-auto mb-3">
+        <Link to="/blood-bank/login" className="flex items-center justify-center w-full mt-auto mb-3">
           <button
             type="button"
             className="text-blue-400"
@@ -55,7 +55,7 @@ const LeftSidebar = () => {
           >
             logout <LogoutOutlinedIcon />
           </button>
-        </div>
+        </Link>
       </div>
     </div>
   );

@@ -71,7 +71,7 @@ export const DonorRegister = async (req, res) => {
         const {email} = donor;
 
         const donorToPass = await Donor.findOne({email});  
-        const donorToken = createJWT({donorId: donorToPass._id, donatedAt : donorToPass.donatedAt});
+        const donorToken = createJWT({donorId: donorToPass._id, donatedAt : donorToPass.donatedAt, location: donorToPass.location});
         const oneDay = 60*60*1000*24;
         res.cookie("donorToken", donorToken,{ 
         httpOnly: true,
@@ -94,7 +94,7 @@ export const DonorRegister = async (req, res) => {
          const isValidUser = donor && (await comparePassword(req.body.password, donor.password));
          if(!isValidUser) throw new UnauthenticatedError("invalid credentials");
      
-           const donorToken = createJWT({donorId: donor._id, donatedAt : donor.donatedAt});
+           const donorToken = createJWT({donorId: donor._id, donatedAt : donor.donatedAt, location: donor.location});
            const oneDay = 60*60*1000*24;
      
            res.cookie("donorToken", donorToken,{ 
