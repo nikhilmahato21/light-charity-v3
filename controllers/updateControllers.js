@@ -6,6 +6,10 @@ import { BadRequestError, NotFoundError } from "../errors/customErrors.js";
 import { getCoordinates } from "./location.js";
 
 
+
+
+// get all donors
+
 export const getDonors = async (req, res) => {
   
     const bloodBank = await BloodBank.findById(req.user.userId);
@@ -20,6 +24,11 @@ export const getDonors = async (req, res) => {
     }
 };
 
+
+
+
+// get current bloodbank
+
 export const getBloodBank = async (req, res) =>{
   const bloodBank = await BloodBank.findById(req.user.userId);
   if (bloodBank) {
@@ -28,6 +37,12 @@ export const getBloodBank = async (req, res) =>{
     throw new NotFoundError("Blood Bank not found");
   }
 }
+
+
+
+
+
+// update exsisting donor
 
 
 export const update = async (req, res) => {
@@ -81,6 +96,10 @@ export const update = async (req, res) => {
 
 
 
+
+
+
+// new donor
 
 
 

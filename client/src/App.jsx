@@ -100,11 +100,11 @@ const router = createBrowserRouter([
       {
         path: "donor/dashboard",
         element: <DonorDashbord />,
-        loader: DonordashboardLoader,
         children: [
           {
             index: true,
             element: <Home />,
+            loader: DonordashboardLoader,
           },
 
           {
