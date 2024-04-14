@@ -35,7 +35,10 @@ const Landing = () => {
               </span>
             </Link>
             {/* Option 3 */}
-            <Link className="flex flex-col m-4 items-center group">
+            <Link
+              to="blood-bank/register"
+              className="flex flex-col m-4 items-center group"
+            >
               <i className="fa-solid fa-droplet text-3xl transition-transform transform group-hover:scale-110"></i>
               <span className="ml-2 transition-transform transform group-hover:scale-110">
                 Bloodbank

@@ -25,6 +25,7 @@ import Inventory from "./BanksPages/Inventory";
 import Donors from "./BanksPages/Donors";
 import AddDonor from "./BanksPages/AddDonor";
 import BBProfile from "./BanksPages/BBProfile";
+import Donations from "./pages/Donations";
 
 const router = createBrowserRouter([
   {
@@ -109,6 +110,10 @@ const router = createBrowserRouter([
           {
             path: "profile",
             element: <Profile />,
+          },
+          {
+            path: "donations",
+            element: <Donations />,
           },
         ],
       },
