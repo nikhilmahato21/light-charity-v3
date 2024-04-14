@@ -11,8 +11,8 @@ export const currentDonor = async (req, res) => {
 // search near by
 
 export const getNearBloodbanks = async (req, res) => {
-  const longitude = req.donor.location.coordinates[0];
-  const latitude = req.donor.location.coordinates[1];
+  const longitude = req.body.long;
+  const latitude = req.body.lat;
 
   const hospitals = await BloodBank.find({
     location: {
@@ -21,7 +21,7 @@ export const getNearBloodbanks = async (req, res) => {
           type: "Point",
           coordinates: [longitude, latitude],
         },
-        $maxDistance: 10000,
+        $maxDistance: 1000000,
       },
     },
   });
