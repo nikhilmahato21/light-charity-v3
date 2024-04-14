@@ -3,7 +3,7 @@ import BloodBank from "../models/BloodBank.js";
 import Donor from "../models/Donor.js";
 import { hashPassword } from "../utils/password.js";
 import { BadRequestError, NotFoundError } from "../errors/customErrors.js";
-import { getCoordinates } from "./location.js";
+
 
 
 
@@ -11,15 +11,12 @@ import { getCoordinates } from "./location.js";
 // get all donors
 
 export const getDonors = async (req, res) => {
-  
-    const bloodBank = await BloodBank.findById(req.user.userId);
 
+    const bloodBank = await BloodBank.findById(req.user.userId);
     if (bloodBank) {
       const donors = bloodBank.donors || [];
-
       res.status(200).json({ donors });
     } else {
-
       throw new NotFoundError("Blood Bank not found");
     }
 };
@@ -221,13 +218,3 @@ export const createDonor = async (req, res) => {
   };
 
 
-  export const getAddress = async (req, res) => {
-    const { address } = req.body;
-    try {
-        const coordinates = await getCoordinates(address);
-        res.status(StatusCodes.OK).json( coordinates);
-    } catch (error) {
-        console.error('Error:', error);
-        res.status(500).json({ error: 'Failed to fetch coordinates' });
-    }
-  }

@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { createDonor, update, getDonors, getBloodBank, getAddress } from "../controllers/updateControllers.js";
+import { createDonor, update, getDonors, getBloodBank } from "../controllers/updateControllers.js";
 
 
 
@@ -9,7 +9,6 @@ router.patch('/inventory',update);
 router.post('/create-donor',createDonor);
 router.get('/donors', getDonors);
 router.get('/blood-bank', getBloodBank);
-router.post('/get-address', getAddress);
 
 
 export default router;
