@@ -19,7 +19,7 @@ const Home = () => {
             Qui irure qui lorem cupidatat commodo.
           </p>
           <div className="mt-10 ">
-            <Link className="btn m-2 btn-primary ">Go to Hospitals</Link>
+            <Link className="btn m-2 btn-primary ">My donations</Link>
             <Link className="btn m-2 btn-primary ">Go to Bloodbanks</Link>
           </div>
         </div>
