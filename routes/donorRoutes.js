@@ -6,7 +6,7 @@ import { currentDonor, getNearBloodbanks } from "../controllers/donorControllers
 const router = Router();
 
 router.get('/current-donor', currentDonor);
-router.get("/near-banks", getNearBloodbanks);
+router.post("/near-banks", getNearBloodbanks);
 
 
 
