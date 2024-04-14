@@ -157,6 +157,7 @@ export const createDonor = async (req, res) => {
       
      const donatedAt = {
       bloodbank: bloodbank.name,
+       location:bloodbank.location,
       donated: donated,
      date: formattedDate
    }
@@ -201,6 +202,7 @@ export const createDonor = async (req, res) => {
              
     const donatedAt = {
       bloodbank: bloodbank.name,
+      location:bloodbank.location,
       donated: donated,
       date: formattedDate
   }
