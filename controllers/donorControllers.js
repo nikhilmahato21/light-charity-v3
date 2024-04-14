@@ -4,7 +4,6 @@ import BloodBank from "../models/BloodBank.js";
 
 export const currentDonor = async (req, res) => {
   const donor = await Donor.findById(req.donor.donorId);
-
   res.status(StatusCodes.OK).json({ donor });
 };
 
