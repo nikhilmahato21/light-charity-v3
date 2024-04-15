@@ -1,12 +1,12 @@
 import { Router } from "express";
-import { currentDonor, getNearBloodbanks } from "../controllers/donorControllers.js";
+import { currentDonor, getNearBloodbanks, nearbyBloodBanks } from "../controllers/donorControllers.js";
 
 
 
 const router = Router();
 
 router.get('/current-donor', currentDonor);
-router.post("/near-banks", getNearBloodbanks);
+router.get("/near-banks", nearbyBloodBanks);
 
 
 
