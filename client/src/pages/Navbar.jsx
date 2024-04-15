@@ -61,7 +61,10 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
-              <Link to="/donor/dashboard/donations" className="nav-link hover:text-secondary">
+              <Link
+                to="/donor/dashboard/donations"
+                className="nav-link hover:text-secondary"
+              >
                 My Donations
               </Link>
             </li>
