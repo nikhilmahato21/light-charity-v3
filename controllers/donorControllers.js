@@ -54,7 +54,7 @@ export const nearbyBloodBanks = async (req, res) => {
       $geoNear: {
         near: userLocation,
         distanceField: "distance",
-        maxDistance: 1000,
+        maxDistance: 100000 * 100000,
         spherical: true,
       },
     },

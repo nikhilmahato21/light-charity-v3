@@ -10,6 +10,7 @@ import { createJWT } from "../utils/token.js";
 
 export const register = async (req, res) => {
   const { email } = req.body;
+  
   const locationObject = JSON.parse(req.body.location);
   const long = locationObject.longitude
   const lati = locationObject.latitude

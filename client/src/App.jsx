@@ -110,10 +110,12 @@ const router = createBrowserRouter([
           {
             path: "profile",
             element: <Profile />,
+            loader: DonordashboardLoader,
           },
           {
             path: "donations",
             element: <Donations />,
+            loader: DonordashboardLoader,
           },
         ],
       },
