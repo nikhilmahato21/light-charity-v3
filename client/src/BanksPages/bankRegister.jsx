@@ -3,6 +3,9 @@ import FormInput from "../components/FromInput";
 import SubmitBtn from "../components/SubmitBtn";
 import { useState } from "react";
 
+import GooglePlaceSearch from "../components/GooglePlaceSearch";
+import AutoComplete from "../BanksComponents/AutoComplete";
+
 const BankRegister = () => {
   const navigation = useNavigation();
   const isSubmitting = navigation.state === "submitting";
@@ -60,6 +63,8 @@ const BankRegister = () => {
               name="address"
               size="w-full"
             />
+
+            <AutoComplete />
             <FormInput
               type="hidden"
               name="location"
