@@ -64,6 +64,7 @@ const router = createBrowserRouter([
           {
             path: "inventory",
             element: <Inventory />,
+            loader: BBDashboardLoader,
           },
 
           {
