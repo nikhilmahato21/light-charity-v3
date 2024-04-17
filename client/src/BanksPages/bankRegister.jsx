@@ -10,29 +10,11 @@ const BankRegister = () => {
   const navigation = useNavigation();
   const isSubmitting = navigation.state === "submitting";
   const [location, setLocation] = useState(null);
-  const getLocation = () => {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          const { latitude, longitude } = position.coords;
-          setLocation({ latitude, longitude });
-          console.log(location);
-        },
-        (error) => {
-          console.error(error.message);
-        }
-      );
-    } else {
-      console.log("Geolocation is not supported by this browser.");
-    }
-  };
-  const handleRegister = () => {
-    if (!location) {
-      alert("Please get location before registering.");
-      return;
-    }
-  };
 
+  const handleLocationChange = (newLocation) => {
+    setLocation(newLocation);
+    console.log(location);
+  };
   return (
     <div
       className="hero min-h-screen "
@@ -57,39 +39,20 @@ const BankRegister = () => {
 
             <FormInput type="password" label="password" name="password" />
 
-            <FormInput
-              type="text"
-              label="address"
-              name="address"
-              size="w-full"
-            />
-
-            <AutoComplete />
+            <AutoComplete setLocation={handleLocationChange} />
+            <FormInput type="hidden" name="address" defaultValue={location?.address} />
             <FormInput
               type="hidden"
               name="location"
-              defaultValue={JSON.stringify(location)}
+              defaultValue={JSON.stringify(location?.latLng)}
             />
           </div>
-
-          <button
-            type="button"
-            className="text-white border rounded-xl p-3"
-            onClick={getLocation}
-          >
-            Get Location
-          </button>
-          <span className="text-white font-semibold m-1">
-            {" "}
-            {!location && "please get location!"}
-          </span>
 
           <div className="mt-6">
             <button
               type="submit"
               className="btn btn-primary btn-block"
               disabled={isSubmitting}
-              onClick={handleRegister}
             >
               {isSubmitting ? (
                 <>

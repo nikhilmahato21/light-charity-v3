@@ -4,10 +4,18 @@ import PlacesAutocomplete, {
   getLatLng,
 } from "react-places-autocomplete";
 
-const AutoComplete = () => {
+const AutoComplete = ({ setLocation }) => {
   const [address, setAddress] = useState("");
+  const [coordinates, setCoordinates] = useState(null);
 
-  const handleSelect = async (value) => {};
+  const handleSelect = async (value) => {
+    const results = await geocodeByAddress(value);
+    const latLng = await getLatLng(results[0]);
+    setCoordinates(latLng);
+
+    setAddress(value);
+    setLocation({ address: value, latLng });
+  };
 
   return (
     <div className="form-control">
@@ -19,7 +27,7 @@ const AutoComplete = () => {
         {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
           <div>
             <label htmlFor="bloodGroup" className="label text-white">
-              Blood Group
+              Address
             </label>
             <input
               className="input w-full"
