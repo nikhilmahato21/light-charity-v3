@@ -99,7 +99,7 @@ export const addDonorAction = async ({ request }) => {
   const data = Object.fromEntries(formData);
 
   try {
-    await customFetchBloodbank.post("/update/create-donor", data);
+    await customFetchBloodbank.post("/update/inventory", data);
     toast.success("Donor Added successful");
     return redirect("/blood-bank/dashboard/add-donor");
   } catch (error) {

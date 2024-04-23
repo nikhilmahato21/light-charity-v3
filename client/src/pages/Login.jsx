@@ -27,6 +27,7 @@ const Login = () => {
         type='password'
         label='password'
         name='password'
+        textAlt = '/donor/login/forgot-password'
       />
       <div className='mt-4'>
         <SubmitBtn text='login' />
