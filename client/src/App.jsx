@@ -10,6 +10,9 @@ import {
   DonorRegisterAction,
   DonorRegisterVerificationAction,
   addDonorAction,
+  DonorForgotPassword,
+  ForgotPasswordVerificationAction,
+  UpdatePasswordAction,
 } from "./utils/actions";
 import Landing from "./pages/Landing";
 import DonorDashbord from "./pages/DonorDashbord";
@@ -26,6 +29,9 @@ import Donors from "./BanksPages/Donors";
 import AddDonor from "./BanksPages/AddDonor";
 import BBProfile from "./BanksPages/BBProfile";
 import Donations from "./pages/Donations";
+import ForgotPassword from "./pages/ForgotPassword";
+import ForgotVerify from "./pages/ForgotVerify";
+import UpdatePassword from "./pages/UpdatePassword";
 
 const router = createBrowserRouter([
   {
@@ -96,6 +102,21 @@ const router = createBrowserRouter([
         path: "donor/register/verification",
         element: <RegisterVerify />,
         action: DonorRegisterVerificationAction,
+      },
+      {
+        path: "donor/login/forgot-password",
+        element: <ForgotPassword />,
+        action: DonorForgotPassword,
+      },
+      {
+        path: "donor/login/forgot-verify",
+        element: <ForgotVerify />,
+        action: ForgotPasswordVerificationAction,
+      },
+      {
+        path: "donor/login/update-password",
+        element: <UpdatePassword />,
+        action: UpdatePasswordAction,
       },
 
       {

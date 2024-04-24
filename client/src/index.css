@@ -20,10 +20,5 @@
 
   .no-scrollbar {
     overflow-y: auto;
-    /* Hide scrollbar for webkit browsers (Chrome, Safari, Edge, Opera) */
-    &::-webkit-scrollbar {
-      display: none;
-    }
-    /* Hide scrollbar for Firefox */
-    scrollbar-width: none;
+    
   }

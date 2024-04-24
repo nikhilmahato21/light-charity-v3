@@ -47,6 +47,52 @@ export const DonorLoginAction = async ({ request }) => {
   }
 };
 
+export const DonorForgotPassword = async ({ request }) => {
+  const formData = await request.formData();
+  const data = Object.fromEntries(formData);
+  
+  try {
+    const response = await customFetchDonor.post("/auth/forgot-password", data);
+    toast.success("OTP sent successfully");
+    return redirect("/donor/login/forgot-verify");
+  } catch (error) {
+    const errorMessage = error?.response?.data?.msg || "something went wrong";
+    toast.error(errorMessage);
+    return null;
+  }
+};
+export const ForgotPasswordVerificationAction = async ({ request }) => {
+  const formData = await request.formData();
+  const data = Object.fromEntries(formData);
+  try {
+    const response = await customFetchDonor.post(
+      "/auth/forgot-password-verify",
+      data
+    );
+    toast.success("verification successfull!");
+    return redirect("/donor/login/update-password");
+  } catch (error) {
+    const errorMessage = error?.response?.data?.msg || "Otp is incorrect";
+    toast.error(errorMessage);
+    return null;
+  }
+};
+export const UpdatePasswordAction = async ({ request }) => {
+  const formData = await request.formData();
+  const data = Object.fromEntries(formData);
+  
+
+  try {
+    const response = await customFetchDonor.put("/auth/reset-password", data);
+    toast.success("password updated");
+    return redirect("/donor/login");
+  } catch (error) {
+    const errorMessage = error?.response?.data?.msg || "something went wrong";
+    toast.error(errorMessage);
+    return null;
+  }
+};
+
 // blood bank actions
 
 export const BBRegisterAction = async ({ request }) => {
