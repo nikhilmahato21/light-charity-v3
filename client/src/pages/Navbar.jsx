@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { BsMoonFill, BsSunFill } from "react-icons/bs";
 
 import { Link } from "react-router-dom";
+import { DonorLogoutAction } from "../utils/actions";
 
 const Navbar = () => {
   const [showInput, setShowInput] = useState(false);
@@ -80,7 +81,12 @@ const Navbar = () => {
               <Link className="nav-link hover:text-secondary">About</Link>
             </li>
             <li>
-              <Link className="nav-link hover:text-secondary">Logout</Link>
+              <Link
+                className="nav-link hover:text-secondary"
+                onClick={DonorLogoutAction}
+              >
+                Logout
+              </Link>
             </li>
           </ul>
         </div>

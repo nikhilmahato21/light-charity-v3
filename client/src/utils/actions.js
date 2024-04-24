@@ -46,11 +46,23 @@ export const DonorLoginAction = async ({ request }) => {
     return error;
   }
 };
+export const DonorLogoutAction = async () => {
+  try {
+    redirect("/donor/login");
+    await customFetchBloodbank.get("/auth/logout");
+    toast.success("Logged out!");
+    return;
+  } catch (error) {
+    console.log(error);
+    toast.error(error?.response?.data?.msg);
+    return error;
+  }
+};
 
 export const DonorForgotPassword = async ({ request }) => {
   const formData = await request.formData();
   const data = Object.fromEntries(formData);
-  
+
   try {
     const response = await customFetchDonor.post("/auth/forgot-password", data);
     toast.success("OTP sent successfully");
@@ -80,7 +92,6 @@ export const ForgotPasswordVerificationAction = async ({ request }) => {
 export const UpdatePasswordAction = async ({ request }) => {
   const formData = await request.formData();
   const data = Object.fromEntries(formData);
-  
 
   try {
     const response = await customFetchDonor.put("/auth/reset-password", data);
