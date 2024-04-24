@@ -53,7 +53,7 @@ const Home = () => {
             >
               My donations
             </Link>
-            <Link to="/donor/login" className="btn m-2 btn-primary ">
+            <Link to="/donor/login" className="btn m-2 btn-primary hidden ">
               Login
             </Link>
           </div>
@@ -63,12 +63,12 @@ const Home = () => {
         </div>
       </div>
       <div className="mt-3 p-3 grid grid-cols-1  lg:grid-cols-2 gap-8 items-center bg-gradient-to-r from-blue-50 to-red-50 rounded-box">
-        <div className=" h-80     p-4 space-x-4 rounded-box border-2 border-black-500 overflow-y-auto overflow-scroll  no-scrollbar">
+        <div className=" h-80     sm:p-4 space-x-4 rounded-box   overflow-y-auto overflow-scroll  no-scrollbar">
           <ul className="">
             {hospitals.map((hospital, index) => (
               <li
                 key={index}
-                className="border-2 border-slate-200 rounded-md my-2 "
+                className="border-2 border-stone-900 rounded-md my-2 "
               >
                 <div className="px-4 py-4 sm:px-6 flex justify-between items-center">
                   {/* Left Section - Hospital Name and Time */}

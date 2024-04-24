@@ -1,9 +1,6 @@
 import { redirect } from "react-router-dom";
 import { customFetchBloodbank, customFetchDonor } from "./helper";
 
-
-
-
 // donors loaders
 
 export const DonordashboardLoader = async () => {
@@ -15,10 +12,6 @@ export const DonordashboardLoader = async () => {
   }
 };
 
-
-
-
-
 // blood banks donor
 
 export const BBDashboardLoader = async () => {
@@ -26,7 +19,6 @@ export const BBDashboardLoader = async () => {
     const { data } = await customFetchBloodbank.get("/update/blood-bank");
     console.log(data);
     return data;
-   
   } catch (error) {
     return redirect("/blood-bank/login");
   }

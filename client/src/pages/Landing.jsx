@@ -16,7 +16,7 @@ const Landing = () => {
           <div className="flex justify-center space-x-4">
             {/* Option 1 */}
             <Link
-              to="/donor/dashboard"
+              to="/donor/login"
               className="flex flex-col m-4 items-center group"
             >
               <i className="fa-solid fa-heart text-3xl transition-transform transform group-hover:scale-110"></i>
@@ -26,7 +26,7 @@ const Landing = () => {
             </Link>
             {/* Option 2 */}
             <Link
-              to="blood-bank/register"
+              to="blood-bank/login"
               className="flex flex-col m-4 items-center group"
             >
               <i className="fa-solid fa-hospital text-3xl transition-transform transform group-hover:scale-110"></i>
@@ -36,7 +36,7 @@ const Landing = () => {
             </Link>
             {/* Option 3 */}
             <Link
-              to="blood-bank/register"
+              to="blood-bank/login"
               className="flex flex-col m-4 items-center group"
             >
               <i className="fa-solid fa-droplet text-3xl transition-transform transform group-hover:scale-110"></i>

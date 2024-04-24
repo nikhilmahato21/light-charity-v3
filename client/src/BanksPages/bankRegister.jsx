@@ -26,7 +26,8 @@ const BankRegister = () => {
       <div className="hero-overlay bg-opacity-80"></div>
       <div className="bg-transparent p-8  w-full sm:max-w-lg">
         <h2 className="text-3xl text-center text-white font-bold mb-6">
-          Register
+          Register{" "}
+          <i className="fa-solid fa-hospital text-3xl transition-transform transform group-hover:scale-110"></i>
         </h2>
         <Form method="post">
           <div className=" sm:grid-cols-1 grid gap-4">
@@ -40,7 +41,11 @@ const BankRegister = () => {
             <FormInput type="password" label="password" name="password" />
 
             <AutoComplete setLocation={handleLocationChange} />
-            <FormInput type="hidden" name="address" defaultValue={location?.address} />
+            <FormInput
+              type="hidden"
+              name="address"
+              defaultValue={location?.address}
+            />
             <FormInput
               type="hidden"
               name="location"
