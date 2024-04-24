@@ -16,7 +16,7 @@ const Landing = () => {
           <div className="flex justify-center space-x-4">
             {/* Option 1 */}
             <Link
-              to="donor/login"
+              to="donor/dashboard"
               className="flex flex-col m-4 items-center group"
             >
               <i className="fa-solid fa-heart text-3xl transition-transform transform group-hover:scale-110"></i>

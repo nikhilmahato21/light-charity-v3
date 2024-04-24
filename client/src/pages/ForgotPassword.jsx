@@ -14,6 +14,7 @@ const ForgotPassword = () => {
           <FormInput
             type="email"
             name="email"
+            size=" font-bold"
             defaultValue="Enter your Email"
           />
 

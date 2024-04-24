@@ -47,8 +47,15 @@ const Home = () => {
             Qui irure qui lorem cupidatat commodo.
           </p>
           <div className="mt-10 ">
-            <Link className="btn m-2 btn-primary ">My donations</Link>
-            <Link className="btn m-2 btn-primary ">Go to Bloodbanks</Link>
+            <Link
+              to="/donor/dashboard/donations"
+              className="btn m-2 btn-primary "
+            >
+              My donations
+            </Link>
+            <Link to="/donor/login" className="btn m-2 btn-primary ">
+              Login
+            </Link>
           </div>
         </div>
         <div className="hidden  h-[28rem]  lg:carousel   p-4 space-x-4 rounded-box">
