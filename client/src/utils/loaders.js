@@ -5,7 +5,9 @@ import { customFetchBloodbank, customFetchDonor } from "./helper";
 
 export const DonordashboardLoader = async () => {
   try {
-    const { data } = await customFetchDonor.get("/donor/current-donor");
+    const { data } = await customFetchDonor.get("/donor/current-donor", {
+      withCredentials: true,
+    });
     return data;
   } catch (error) {
     return redirect("/donor/login");

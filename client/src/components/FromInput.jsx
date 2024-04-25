@@ -12,46 +12,35 @@ const FormInput = ({
   maxLength,
   required,
   textAlt,
+  placeholder,
 }) => {
   const location = useLocation();
   const isLoginOrRegister =
     location.pathname.endsWith("login") ||
     location.pathname.endsWith("register");
 
-  const [isFocused, setIsFocused] = useState(false);
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
   const togglePasswordVisibility = () => {
     setIsPasswordVisible(!isPasswordVisible);
   };
 
-  const handleFocus = () => {
-    setIsFocused(true);
-  };
-
-  const handleBlur = () => {
-    setIsFocused(false);
-  };
-
   return (
     <div className="form-control relative">
-      <label className="label">
+      <label className="label ">
         <span
-          className={`label-text font-semibold capitalize ${
+          className={`label-text font-semibold capitalize tracking-widest  ${
             isLoginOrRegister ? "text-white" : ""
           }`}
         >
           {label}
         </span>
         {textAlt && (
-          <span className="label-alt-text ">
-            <Link
-              to={`${textAlt}`}
-              className=" link link-hover link-primary capitalize hover:no-underline hover:link"
-            >
+          <Link to={`${textAlt}`}>
+            <span className="label-alt-text link no-underline text-white font-mono capitalize hover:no-underline hover:text-stone-400 ">
               forgot password ?
-            </Link>
-          </span>
+            </span>
+          </Link>
         )}
       </label>
       <input
@@ -60,9 +49,8 @@ const FormInput = ({
         maxLength={maxLength}
         required={required}
         className={`input input-bordered ${size}`}
-        onFocus={handleFocus}
-        onBlur={handleBlur}
-        placeholder={isFocused ? "" : defaultValue}
+        placeholder={placeholder}
+        defaultValue={defaultValue}
       />
       {type === "password" && (
         <span

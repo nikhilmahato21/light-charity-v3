@@ -108,6 +108,8 @@ export const DonorLogin = async (req, res) => {
   });
   res.status(StatusCodes.OK).json({ msg: "logged in successfully" });
 };
+
+//logout
 export const logout = (req, res) => {
   res.cookie("donorToken", "logout", {
     httpOnly: true,

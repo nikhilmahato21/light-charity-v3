@@ -3,6 +3,9 @@ import FormInput from "../components/FromInput";
 import SubmitBtn from "../components/SubmitBtn";
 
 const Login = () => {
+  const loginwithgoogle = () => {
+    window.open("http://localhost:3000/auth/google/callback", "_self");
+  };
   return (
     <div
       className="hero min-h-screen"
@@ -31,6 +34,7 @@ const Login = () => {
           <div className="mt-4">
             <SubmitBtn text="login" />
           </div>
+
           <p className="text-center text-white">
             Not a member yet?
             <Link
@@ -41,6 +45,12 @@ const Login = () => {
             </Link>
           </p>
         </Form>
+        {/* <button
+          onClick={loginwithgoogle}
+          className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow flex items-center"
+        >
+          Sign in with Google
+        </button> */}
       </section>
     </div>
   );

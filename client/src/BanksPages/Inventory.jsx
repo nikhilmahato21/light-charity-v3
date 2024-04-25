@@ -27,9 +27,8 @@ const Inventory = () => {
 
   const inventory = data.bloodBank.inventory;
 
-
   return (
-    <div className="  flex items-center justify-center w-full h-full ">
+    <div className="  flex items-center justify-center w-full h-full  ">
       <ResponsiveContainer width="100%" height="100%">
         <BarChart
           width={500}
@@ -47,14 +46,16 @@ const Inventory = () => {
             dataKey="bloodGroup"
             scale="point"
             padding={{ left: 30, right: 10 }}
+            stroke="#8884d8"
           />
-          <YAxis />
+          <YAxis padding={{ top: 20 }} stroke="#8884d8" />
           <Tooltip />
-          <Legend />
+          <Legend formatter={() => "Units"} />
           <CartesianGrid strokeDasharray="3 3" />
           <Bar
             dataKey="quantity"
             fill="#d63031"
+            
             background={{ fill: "#eee" }}
             radius={[20, 20, 0, 0]}
           />

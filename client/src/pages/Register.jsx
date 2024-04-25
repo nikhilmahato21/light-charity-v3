@@ -27,8 +27,8 @@ const Register = () => {
 
             <FormInput type="password" label="password" name="password" />
 
-            <div className="form-control">
-              <label htmlFor="bloodGroup" className="label text-white">
+            <div className="form-control m-0 p-0">
+              <label htmlFor="bloodGroup" className="label font-semibold tracking-wider  text-white">
                 Blood Group
               </label>
               <select

@@ -19,6 +19,7 @@ const Profile = () => {
               name="name"
               required
               defaultValue={data.donor.name}
+              size="font-bold"
             />
 
             {/* Email Input */}
@@ -28,6 +29,7 @@ const Profile = () => {
               name="email"
               required
               defaultValue={data.donor.email}
+              size="font-bold"
             />
             <FormInput type="number" label="number" name="number" />
 
@@ -38,7 +40,7 @@ const Profile = () => {
               <select
                 id="bloodGroup"
                 name="bloodGroup"
-                className={`input input-bordered `}
+                className={`input input-bordered font-bold `}
               >
                 <option value="A+">A+</option>
                 <option value="A-">A-</option>
@@ -55,9 +57,10 @@ const Profile = () => {
             type="text"
             label="address"
             name="address"
-            size="w-full"
+            size="w-full font-bold"
             required
             defaultValue={data.donor.address}
+           
           />
 
           <div className="mt-6">

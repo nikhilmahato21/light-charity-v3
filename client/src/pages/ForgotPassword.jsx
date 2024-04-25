@@ -15,7 +15,7 @@ const ForgotPassword = () => {
             type="email"
             name="email"
             size=" font-bold"
-            defaultValue="Enter your Email"
+            placeholder="Enter your Email"
           />
 
           <SubmitBtn text="Get OTP" />

@@ -82,6 +82,7 @@ const Navbar = () => {
             </li>
             <li>
               <Link
+                to="/donor/login"
                 className="nav-link hover:text-secondary"
                 onClick={DonorLogoutAction}
               >

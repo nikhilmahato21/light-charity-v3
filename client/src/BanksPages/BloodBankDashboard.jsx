@@ -10,7 +10,7 @@ const BloodBankDashboard = () => {
       </div>
 
       <div className=" flex w-full h-full">
-        <div className=" h-full w-3/12">
+        <div className=" hidden sm:block h-full w-3/12 ">
           <LeftSidebar />
         </div>
 
