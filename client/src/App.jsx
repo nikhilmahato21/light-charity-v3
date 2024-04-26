@@ -126,7 +126,7 @@ const router = createBrowserRouter([
           {
             index: true,
             element: <Home />,
-            loader: DonordashboardLoader,
+            
           },
 
           {

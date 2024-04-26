@@ -3,7 +3,6 @@ import hero from "../assets/HeroImg.svg";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 
 const Home = () => {
-  const data = useLoaderData();
   const hospitals = [
     {
       name: "Patna Aiims Hospital",
@@ -65,7 +64,7 @@ const Home = () => {
       <div className="mt-3 p-3 grid grid-cols-1  lg:grid-cols-2 gap-8 items-center bg-gradient-to-r from-blue-50 to-red-50 rounded-box">
         <div className=" h-80     sm:p-4 space-x-4 rounded-box   overflow-y-auto overflow-scroll  no-scrollbar">
           <ul className="">
-            {hospitals.map((hospital, index) => (
+            {hospitals?.map((hospital, index) => (
               <li
                 key={index}
                 className="border-2 border-stone-900 rounded-md my-2 "
