@@ -27,6 +27,7 @@ export const register = async (req, res) => {
     coordinates: [long, lati],
   };
   req.body.location = location;
+  
 
   const bank = await BloodBank.create(req.body);
 
