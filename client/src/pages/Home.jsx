@@ -40,10 +40,15 @@ const Home = () => {
           </h1>
 
           <p className="mt-8 max-w-xl text-lg leading-8">
-            Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui
-            lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat
-            fugiat aliqua. Anim aute id magna aliqua ad ad non deserunt sunt.
-            Qui irure qui lorem cupidatat commodo.
+            Blood donation saves lives, as it helps needy patients undergoing
+            surgeries and emergencies among people suffering from blood-related
+            illness. At the same time, it helps the donor maintain a healthy
+            level of iron in his or her body, just as other health benefits and
+            screenings are available. When the body replaces the lost blood
+            cells, it leads to a feeling of general well-being. Regular donors
+            may also have a lower risk of getting heart disease. On top of that,
+            donating may be good for psychological well-being and promote a
+            sense of community and pride.
           </p>
           <div className="mt-10 ">
             <Link
