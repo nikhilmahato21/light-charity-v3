@@ -33,7 +33,7 @@ const Home = () => {
   ];
   return (
     <>
-      <div className=" grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+      <div className=" grid grid-cols-1 lg:grid-cols-2 gap-24 items-center ">
         <div>
           <h1 className="max-w-2xl text-4xl font-bold tracking-tight  sm:text-5xl ">
             “Share the gift of life.”
@@ -53,7 +53,7 @@ const Home = () => {
           <div className="mt-10 ">
             <Link
               to="/donor/dashboard/donations"
-              className="btn m-2 btn-primary "
+              className="btn m-2 btn-error text-white "
             >
               My donations
             </Link>
