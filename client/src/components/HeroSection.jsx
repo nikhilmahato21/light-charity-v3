@@ -10,7 +10,7 @@ const HeroSection = () => {
           “Share the gift of life.”
         </h1>
 
-        <p className="mt-8 max-w-xl text-lg leading-8 text-center p-2">
+        <p className="mt-8 max-w-xl text-lg font-semibold text-gray-400 leading-8 text-center p-2">
           Blood donation saves lives, as it helps needy patients undergoing
           surgeries and emergencies among people suffering from blood-related
           illness. At the same time, it helps the donor maintain a healthy level
@@ -22,7 +22,7 @@ const HeroSection = () => {
         <div className="mt-8 flex items-center justify-center ">
           <Link
             to="/donor/dashboard/donations"
-            className="btn m-2 btn-error text-white "
+            className="btn m-2 btn-error text-stone-600 font-bold "
           >
             My donations
           </Link>
