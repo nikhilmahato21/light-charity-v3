@@ -22,7 +22,7 @@ const HeroSection = () => {
         <div className="mt-8 flex items-center justify-center ">
           <Link
             to="/donor/dashboard/donations"
-            className="btn m-2 btn-error text-stone-600 font-bold "
+            className="btn m-2  bg-rose-500 text-white font-bold tracking-wide "
           >
             My donations
           </Link>

@@ -46,6 +46,21 @@ export const DonorLoginAction = async ({ request }) => {
     return error;
   }
 };
+export const DonorUpdateAction = async ({ request }) => {
+  const formData = await request.formData();
+  const data = Object.fromEntries(formData);
+  console.log(data);
+
+  try {
+    await customFetchDonor.patch("/donor/update-donor", data);
+    toast.success("update successful");
+    return redirect("/donor/dashboard/profile");
+  } catch (error) {
+    console.log(error);
+    toast.error(error?.response?.data?.msg);
+    return error;
+  }
+};
 export const DonorLogoutAction = async () => {
   try {
     redirect("/donor/login");

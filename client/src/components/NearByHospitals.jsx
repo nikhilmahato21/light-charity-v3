@@ -31,7 +31,7 @@ const NearByHospitals = () => {
     // Add more hospitals as needed
   ];
   return (
-    <div className="mt-3 p-3 grid grid-cols-1  lg:grid-cols-2 gap-8 items-center bg-gray-50 border-2 border-rose-200 rounded-box">
+    <div className="mt-3 p-3 grid grid-cols-1  lg:grid-cols-2 gap-8 items-center  border-2 border-rose-200 rounded-box">
       <div className=" h-80     sm:p-4 space-x-4 rounded-box   overflow-y-auto overflow-scroll  no-scrollbar">
         <ul className="">
           {hospitals?.map((hospital, index) => (

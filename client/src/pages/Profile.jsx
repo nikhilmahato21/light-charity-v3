@@ -1,24 +1,35 @@
-import { Form, useLoaderData } from "react-router-dom";
+import { Form, useLoaderData, useNavigation } from "react-router-dom";
 import SubmitBtn from "../components/SubmitBtn";
 import FormInput from "../components/FromInput";
 import ProfileCard from "../components/ProfileCard";
 
 const Profile = () => {
   const data = useLoaderData();
+  const navigation = useNavigation();
+  const isSubmitting = navigation.state === "submitting";
 
   return (
     <div className=" w-full h-full flex-col items-center justify-center ">
-      <ProfileCard />
+      <h1 className="text-4xl font-bold text-center mb-4">Profile</h1>
+      <ProfileCard data={data} />
 
       <dialog id="my_modal_4" className="modal">
         <div className="modal-box">
-          <form method="modal">
-            {/* if there is a button in form, it will close the modal */}
-            <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
-              ✕
-            </button>
-          </form>
-          <Form method="post">
+          <button
+            className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
+            onClick={() => document.getElementById("my_modal_4").close()}
+          >
+            ✕
+          </button>
+
+          <Form
+            method="post"
+            onSubmit={(e) => {
+              if (!isSubmitting) {
+                document.getElementById("my_modal_4").close();
+              }
+            }}
+          >
             <div className=" sm:grid-cols-2 grid gap-4  ">
               {/* Username Input */}
               <FormInput
@@ -36,14 +47,22 @@ const Profile = () => {
                 type="email"
                 label="email"
                 name="email"
-                required
                 defaultValue={data.donor.email}
                 size="font-bold"
               />
-              <FormInput type="number" label="number" name="number" />
+              <FormInput
+                type="number"
+                label="number"
+                name="number"
+                defaultValue={data.donor.number}
+                size="font-bold"
+              />
 
               <div className="form-control">
-                <label htmlFor="bloodGroup" className="label label-text font-semibold capitalize tracking-widest">
+                <label
+                  htmlFor="bloodGroup"
+                  className="label label-text font-semibold capitalize tracking-widest"
+                >
                   Blood Group
                 </label>
                 <select
@@ -71,7 +90,7 @@ const Profile = () => {
               defaultValue={data.donor.address}
             />
 
-            <div className="mt-6">
+            <div className="mt-6 modal-open">
               <SubmitBtn text="Update" />
             </div>
           </Form>

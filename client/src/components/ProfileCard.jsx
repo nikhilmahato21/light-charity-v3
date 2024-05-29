@@ -1,7 +1,7 @@
 import React from "react";
 import { FiEdit } from "react-icons/fi";
 
-const ProfileCard = () => {
+const ProfileCard = ({ data }) => {
   return (
     <div className="max-w-3xl mx-auto bg-white shadow-md rounded-lg overflow-hidden">
       <div className="flex items-center p-4">
@@ -11,12 +11,12 @@ const ProfileCard = () => {
           alt="Profile"
         />
         <div className="ml-4 ">
-          <h2 className="text-xl font-semibold">
-            John Doe <span>(A+)</span>
+          <h2 className="text-xl font-semibold capitalize">
+            {data.donor.name} <span>({data.donor.bloodGroup})</span>
           </h2>
-          <p className="text-gray-600 mt-1">jd@gmail.com</p>
-          <p className="text-gray-600 mt-1">78******78</p>
-          <p className="text-gray-600 mt-1">canada</p>
+          <p className="text-gray-600 mt-1">{data.donor.email}</p>
+          <p className="text-gray-600 mt-1">{data.donor.number}</p>
+          <p className="text-gray-600 mt-1">{data.donor.address}</p>
         </div>
 
         <div
@@ -28,7 +28,6 @@ const ProfileCard = () => {
           </button>
         </div>
       </div>
-      
     </div>
   );
 };

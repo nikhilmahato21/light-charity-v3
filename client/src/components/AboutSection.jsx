@@ -25,7 +25,7 @@ const AboutSection = () => {
           efficient as possible, thereby saving lives and supporting our
           community's health needs.
         </p>
-        <button className="bg-rose-300 py-2 px-3 rounded-lg text-stone-700 font-bold">
+        <button className="bg-rose-500 py-2 px-3 rounded-lg text-white font-bold tracking-wide">
           read more
         </button>
       </div>

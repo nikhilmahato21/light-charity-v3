@@ -9,6 +9,15 @@ export const currentDonor = async (req, res) => {
   res.status(StatusCodes.OK).json({ donor });
 };
 
+//update  user
+export const updateDonor = async (req, res) => {
+  const updatedDonor = await Donor.findByIdAndUpdate(
+    req.donor.donorId,
+    req.body
+  );
+  res.status(StatusCodes.OK).json({ msg: "user updated" });
+};
+
 // search near by
 
 export const getNearBloodbanks = async (req, res) => {

@@ -13,6 +13,7 @@ import {
   DonorForgotPassword,
   ForgotPasswordVerificationAction,
   UpdatePasswordAction,
+  DonorUpdateAction,
 } from "./utils/actions";
 import Landing from "./pages/Landing";
 import DonorDashbord from "./pages/DonorDashbord";
@@ -126,13 +127,13 @@ const router = createBrowserRouter([
           {
             index: true,
             element: <Home />,
-            
           },
 
           {
             path: "profile",
             element: <Profile />,
             loader: DonordashboardLoader,
+            action: DonorUpdateAction,
           },
           {
             path: "donations",
