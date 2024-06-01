@@ -169,6 +169,7 @@ export const BBLogoutAction = async () => {
 export const addDonorAction = async ({ request }) => {
   const formData = await request.formData();
   const data = Object.fromEntries(formData);
+  console.log(data);
 
   try {
     await customFetchBloodbank.patch("/update/inventory", data);

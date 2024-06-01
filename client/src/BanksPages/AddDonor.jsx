@@ -17,7 +17,7 @@ const AddDonor = () => {
             <FormInput type="email" label="email" name="email" required />
 
             <FormInput type="date" label="dob" name="dob" required />
-            <FormInput type="number" label="donated" name="donated" required />
+            <FormInput type="number" label="donated" name="quantity" required />
             <FormInput type="number" label="number" name="number" required />
 
             <div className="form-control font-semibold">
