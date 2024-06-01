@@ -45,7 +45,7 @@ export const getBloodBank = async (req, res) =>{
 export const update = async (req, res) => {
     const {  quantity , email } = req.body;
     const existingDonor = await Donor.findOne({ email }).select(" -password -donatedAt -createdAt -updatedAt -__v");
-   
+   console.log(existingDonor);
     if(!existingDonor){
       throw new BadRequestError("no donor found");
     }
@@ -104,6 +104,6 @@ export const update = async (req, res) => {
 
 
 
-// new donor
+
 
 

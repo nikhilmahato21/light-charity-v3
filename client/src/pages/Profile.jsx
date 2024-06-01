@@ -30,6 +30,14 @@ const Profile = () => {
               }
             }}
           >
+            {/* File Upload*/}
+            <FormInput
+              type="file"
+              color="black"
+              label="avatar"
+              name="avatar"
+              size="p-2 font-bold"
+            />
             <div className=" sm:grid-cols-2 grid gap-4  ">
               {/* Username Input */}
               <FormInput

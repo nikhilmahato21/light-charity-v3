@@ -6,7 +6,6 @@ const app = express();
 import morgan, { format } from "morgan";
 import mongoose from "mongoose";
 import { StatusCodes } from "http-status-codes";
-import session from "express-session";
 
 // cookie parser
 
@@ -29,9 +28,6 @@ import {
   authenticateBloodbank,
   authenticateDonor,
 } from "./middlewares/authenticateUser.js";
-import { callback } from "chart.js/helpers";
-import Donor from "./models/Donor.js";
-import { log } from "console";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -39,7 +35,7 @@ if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
 }
 
-app.use(express.static(path.resolve(__dirname, "./client/dist")));
+app.use(express.static(path.resolve(__dirname, "./public")));
 app.use(cookieParser());
 app.use(errorHandler);
 app.use(express.json());
