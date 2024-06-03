@@ -1,11 +1,12 @@
 import React from "react";
+import lc from "../assets/lc.jpeg";
 
 const AboutSection = () => {
   return (
     <section class="flex flex-col md:flex-row md:items-center justify-center py-12">
       <div class="w-full md:w-1/2 order-2 md:order-1">
         <img
-          src="path/to/your/image.jpg"
+          src={lc}
           alt="About Us Image"
           class="object-cover h-full w-full rounded-lg shadow-md md:rounded-none md:shadow-none"
         />
